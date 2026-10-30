@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Planner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">PLAN • STUDY • SUCCEED</p>
+      <h1>My Student Planner</h1>
+      <p>Keep your assignments and study goals in one place.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="stats" aria-label="Task summary">
+      <article class="stat-card"><span>Total tasks</span><strong id="totalCount">0</strong></article>
+      <article class="stat-card"><span>Completed</span><strong id="completedCount">0</strong></article>
+      <article class="stat-card"><span>Pending</span><strong id="pendingCount">0</strong></article>
+    </section>
+
+    <section class="panel">
+      <h2>Add a task</h2>
+      <form id="taskForm">
+        <div class="form-grid">
+          <label>Task name
+            <input id="taskName" type="text" placeholder="e.g. Complete maths assignment" required maxlength="80">
+          </label>
+          <label>Subject
+            <input id="subject" type="text" placeholder="e.g. Mathematics" required maxlength="40">
+          </label>
+          <label>Due date
+            <input id="dueDate" type="date" required>
+          </label>
+          <label>Priority
+            <select id="priority">
+              <option value="Low">Low</option>
+              <option value="Medium" selected>Medium</option>
+              <option value="High">High</option>
+            </select>
+          </label>
+        </div>
+        <button class="primary-btn" type="submit">＋ Add task</button>
+      </form>
+    </section>
+
+    <section class="panel">
+      <div class="list-heading">
+        <div>
+          <h2>My tasks</h2>
+          <p class="muted">Your study checklist, all in one place.</p>
+        </div>
+        <label class="filter-label">Show
+          <select id="filter">
+            <option value="all">All tasks</option>
+            <option value="pending">Pending</option>
+            <option value="completed">Completed</option>
+          </select>
+        </label>
+      </div>
+      <div id="taskList" class="task-list">
+        <p class="empty-state">No tasks yet. Add your first task above!</p>
+      </div>
+    </section>
+    <p class="footer-note">Your tasks are saved in this browser on this device.</p>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

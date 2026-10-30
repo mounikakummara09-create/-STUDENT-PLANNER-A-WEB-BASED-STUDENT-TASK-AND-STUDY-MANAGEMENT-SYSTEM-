@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap');
+
+:root {
+  --ink: #20233a;
+  --muted: #777b91;
+  --purple: #6558d3;
+  --purple-dark: #5145bd;
+  --line: #ececf4;
+  --surface: #ffffff;
+  --bg: #f6f6fc;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+}
+.hero {
+  background: linear-gradient(120deg, #6558d3, #8d78e8);
+  color: white;
+  padding: 48px 20px 74px;
+}
+.hero-inner { max-width: 920px; margin: auto; }
+.eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 2px; opacity: .85; }
+h1, h2 { font-family: 'Manrope', sans-serif; }
+h1 { margin: 8px 0; font-size: clamp(30px, 5vw, 44px); }
+.hero p:last-child { margin-bottom: 0; opacity: .9; }
+.container { max-width: 920px; margin: -34px auto 40px; padding: 0 18px; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 18px; }
+.stat-card, .panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: 0 8px 28px rgba(36, 32, 90, .05);
+}
+.stat-card { padding: 18px 20px; }
+.stat-card span { display: block; color: var(--muted); font-size: 13px; }
+.stat-card strong { display: block; margin-top: 5px; font-size: 28px; font-family: 'Manrope', sans-serif; }
+.panel { padding: 24px; margin-bottom: 18px; }
+h2 { margin: 0 0 18px; font-size: 20px; }
+.form-grid { display: grid; grid-template-columns: 2fr 1.2fr 1fr 1fr; gap: 12px; }
+label { display: flex; flex-direction: column; gap: 7px; color: #555970; font-size: 13px; font-weight: 600; }
+input, select {
+  width: 100%; min-width: 0; border: 1px solid #dedfec; border-radius: 9px;
+  padding: 11px 12px; background: white; color: var(--ink); font: inherit; font-size: 14px;
+}
+input:focus, select:focus { outline: 2px solid #d8d3ff; border-color: var(--purple); }
+.primary-btn {
+  margin-top: 16px; border: 0; border-radius: 9px; padding: 12px 18px;
+  background: var(--purple); color: white; font: inherit; font-weight: 700; cursor: pointer;
+}
+.primary-btn:hover { background: var(--purple-dark); }
+.list-heading { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.list-heading h2 { margin-bottom: 4px; }
+.muted, .footer-note { color: var(--muted); font-size: 13px; }
+.muted { margin: 0 0 14px; }
+.filter-label { min-width: 135px; }
+.task-list { display: grid; gap: 10px; }
+.task {
+  display: flex; align-items: center; gap: 12px; padding: 14px;
+  border: 1px solid var(--line); border-radius: 12px; background: #fff;
+}
+.task input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--purple); flex: 0 0 auto; }
+.task-info { flex: 1; min-width: 0; }
+.task-title { margin: 0 0 5px; font-weight: 700; overflow-wrap: anywhere; }
+.task.done .task-title { color: #9295a6; text-decoration: line-through; }
+.task-meta { color: var(--muted); font-size: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
+.priority { border-radius: 20px; padding: 4px 9px; font-size: 11px; font-weight: 700; }
+.priority.High { background: #fff0ef; color: #c54d46; }
+.priority.Medium { background: #fff6df; color: #9b741b; }
+.priority.Low { background: #eaf7ef; color: #398256; }
+.delete-btn { border: 0; background: #f3f2fa; color: #6b6687; border-radius: 8px; padding: 8px 10px; cursor: pointer; }
+.delete-btn:hover { background: #ffeceb; color: #bd4841; }
+.empty-state { text-align: center; padding: 28px 12px; color: var(--muted); font-size: 14px; }
+.footer-note { text-align: center; margin-top: 22px; }
+@media (max-width: 700px) {
+  .form-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .hero { padding: 36px 18px 62px; }
+  .stats { gap: 8px; }
+  .stat-card { padding: 13px 12px; }
+  .stat-card span { font-size: 11px; }
+  .stat-card strong { font-size: 23px; }
+  .panel { padding: 18px; }
+  .form-grid { grid-template-columns: 1fr; }
+  .list-heading { align-items: flex-start; flex-direction: column; }
+  .filter-label { width: 100%; }
+  .task { padding: 11px; }
+}
